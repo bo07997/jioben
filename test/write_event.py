@@ -9,7 +9,7 @@ class WriteEvent:
         # 创建计时器
         self.timer = Timer()
         # 打开日志文件
-        file_name = "D:\\hook_log.txt"
+        file_name = read_config.location
         self.file_obj = open(file_name, 'w')
         self.exit = set()
         return
@@ -82,8 +82,8 @@ class WriteEvent:
         hm.KeyAll = self.OnKeyboardEvent
         hm.HookKeyboard()
         # # 监控鼠标
-        # hm.MouseAllButtons = OnMouseEvent
-        # hm.HookMouse()
+        hm.MouseAllButtonsDown = self.OnMouseEvent
+        hm.HookMouse()
         # # 循环获取消息
         pythoncom.PumpMessages()
 

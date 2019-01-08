@@ -12,3 +12,4 @@ conf.read(config_path)
 
 pause = conf.get('begin', 'make.pause')
 stop = conf.get('begin', 'make.stop')
+location = conf.get('begin', 'make.location')
